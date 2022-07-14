@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Wrapper from "../Helpers/Wrapper";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import ErrorModal from "../UI/ErrorModal";
@@ -7,7 +8,6 @@ import styles from "./AddUser.module.css";
 const AddUser = (props) => {
   const [username, setUsername] = useState("");
   const [age, setAge] = useState("");
-
   const [error, setError] = useState();
 
   const addUserHandler = (event) => {
@@ -47,7 +47,7 @@ const AddUser = (props) => {
   };
 
   return (
-    <div>
+    <Wrapper>
       {error && (
         <ErrorModal
           onDismiss={errorHandler}
@@ -78,7 +78,7 @@ const AddUser = (props) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </Wrapper>
   );
 };
 
